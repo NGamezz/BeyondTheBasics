@@ -20,7 +20,7 @@ Bankrekening Bankrekening::operator+(const Transactie& transaction) const
 
 std::ostream& operator<<(std::ostream& os, const Bankrekening& bankAccount) {
 
-	os << "Bank Saldo : " << bankAccount.ReturnBankValue() << std::endl;
+	os << "Bank Saldo : " << bankAccount.ReturnBankValue() << " Euro." << std::endl;
 
 	int count = 0;
 	for (int i = 0; i < bankAccount.ReturnTransactionHistory().size(); i++)

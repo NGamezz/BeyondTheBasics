@@ -21,7 +21,7 @@ int main()
 
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-			std::cout << "Invalid input! Please try again with valid input: ";
+			std::cout << "Invalid input. Please Enter Only Numbers : ";
 		}
 
 		Transactie transaction(inputValue);
