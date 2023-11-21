@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="Bankrekening.cpp" />
     <ClCompile Include="BeyondTheBasics.cpp" />
+    <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Transactie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bankrekening.h" />
     <ClInclude Include="BeyondTheBasics.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="Transactie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

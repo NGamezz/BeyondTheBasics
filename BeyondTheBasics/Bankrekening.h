@@ -13,7 +13,6 @@ public:
 	std::vector<Transactie> ReturnTransactionHistory() const;
 
 private:
-	int bankValue;
+	int bankValue = 0;
 	std::vector<Transactie> transactionHistory;
 };
-

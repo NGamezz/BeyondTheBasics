@@ -2,6 +2,7 @@
 #include "Transactie.h"
 #include <Windows.h>
 #include <limits>
+#include "Queue.h"
 #include "BeyondTheBasics.h"
 #undef max
 
@@ -10,6 +11,11 @@ int main()
 	bool solutionRunning = true;
 	Bankrekening bankAccount;
 	int inputValue;
+
+	Custom::Queue<std::string> stringQueue;
+	stringQueue.Put("Random String");
+	stringQueue.Put("Random Last String.");
+	std::cout << stringQueue.Get() << std::endl;
 
 	while (solutionRunning)
 	{
