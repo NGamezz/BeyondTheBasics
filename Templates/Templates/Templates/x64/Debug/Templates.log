@@ -1,0 +1,37 @@
+﻿  Templates.cpp
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(8,31): warning C4101: 'utilityString': unreferenced local variable
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Utility.h(19,3): error C2679: binary '=': no operator found which takes a right-hand operand of type 'void' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(1503,26): message : could be 'std::vector<T,std::allocator<T>> &std::vector<T,std::allocator<T>>::operator =(std::initializer_list<_Ty>)'
+          with
+          [
+              T=float,
+              _Ty=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(1482,26): message : or       'std::vector<T,std::allocator<T>> &std::vector<T,std::allocator<T>>::operator =(const std::vector<T,std::allocator<T>> &)'
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(735,26): message : or       'std::vector<T,std::allocator<T>> &std::vector<T,std::allocator<T>>::operator =(std::vector<T,std::allocator<T>> &&) noexcept(<expr>)'
+          with
+          [
+              T=float
+          ]
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Utility.h(19,3): message : while trying to match the argument list '(std::vector<T,std::allocator<T>>, void)'
+          with
+          [
+              T=float
+          ]
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Utility.h(18,2): message : while compiling class template member function 'T Custom::Utility<T>::Sort(std::vector<T,std::allocator<T>> &)'
+          with
+          [
+              T=float
+          ]
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(23,19): message : see the first reference to 'Custom::Utility<float>::Sort' in 'main'
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(9,25): message : see reference to class template instantiation 'Custom::Utility<float>' being compiled
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Queue.h(35,19): warning C4244: 'return': conversion from 'unsigned __int64' to 'double', possible loss of data
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Queue.h(34,2): message : while compiling class template member function 'double Custom::Queue<std::string>::Size(void) const'
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(30,34): message : see the first reference to 'Custom::Queue<std::string>::Size' in 'main'
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(26,29): message : see reference to class template instantiation 'Custom::Queue<std::string>' being compiled
+  Utility.cpp
+  Generating Code...
