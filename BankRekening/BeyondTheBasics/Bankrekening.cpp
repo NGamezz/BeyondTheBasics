@@ -25,7 +25,7 @@ std::ostream& operator<<(std::ostream& os, const Bankrekening& bankAccount) {
 	int count = 0;
 	for (int i = 0; i < bankAccount.ReturnTransactionHistory().size(); i++)
 	{
-		os << "Transaction Value = " << bankAccount.ReturnTransactionHistory()[i].ReturnTransactionValue() << ". Transaction Index = " << count << std::endl;
+		os << "Transaction Value = " << bankAccount.ReturnTransactionHistory()[i].ReturnTransactionValue() << ". Transaction Index = " << count << ". Transaction Date = " << bankAccount.ReturnTransactionHistory()[i].GetTheTransactionDate() << std::endl;
 		count++;
 	}
 

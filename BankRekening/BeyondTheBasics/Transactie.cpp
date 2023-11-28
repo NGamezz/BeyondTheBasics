@@ -9,3 +9,8 @@ int Transactie::ReturnTransactionValue() const
 {
 	return transactionValue;
 }
+
+std::string Transactie::GetTheTransactionDate() const
+{
+	return date;
+}

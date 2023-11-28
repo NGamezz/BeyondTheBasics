@@ -1,2 +1,8 @@
 ﻿  Templates.cpp
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Queue.h(35,19): warning C4244: 'return': conversion from 'unsigned __int64' to 'double', possible loss of data
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Queue.h(34,2): message : while compiling class template member function 'double Custom::Queue<std::string>::Size(void) const'
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(21,34): message : see the first reference to 'Custom::Queue<std::string>::Size' in 'main'
+C:\GitFork\BeyondTheBasics\Templates\Templates\Templates\Templates.cpp(17,29): message : see reference to class template instantiation 'Custom::Queue<std::string>' being compiled
+  Utility.cpp
+  Generating Code...
   Templates.vcxproj -> C:\GitFork\BeyondTheBasics\Templates\Templates\x64\Debug\Templates.exe

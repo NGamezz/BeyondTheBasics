@@ -26,7 +26,7 @@ namespace Custom {
 			return firstElement;
 		}
 		std::cout << "There are no elements stored in the Queue" << std::endl;
-		return NULL;
+		return default;
 	}
 
 	template<typename T>
