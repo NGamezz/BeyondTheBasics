@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
 #include <ranges>
 #include <algorithm>
@@ -10,12 +11,23 @@ namespace Custom
 	class Utility
 	{
 	public:
-		T Sort(std::vector<T>& collection);
+		static void Sort(std::vector<T>& collection);
+		static void PrintContents(std::vector<T> collection);
 	};
 
 	template<typename T>
-	inline T Utility<T>::Sort(std::vector<T>& collection)
+	void Utility<T>::PrintContents(std::vector<T> collection)
 	{
-		collection = std::sort(collection.begin(), collection.end());
-	}
+		for (auto x : collection)
+		{
+			std::cout << x << std::endl;
+		}
+	};
+
+	template<typename T>
+	void Utility<T>::Sort(std::vector<T>& collection)
+	{
+		std::sort(collection.begin(), collection.end());
+
+	};
 }

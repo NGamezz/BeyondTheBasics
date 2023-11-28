@@ -5,23 +5,14 @@
 
 int main()
 {
-	Custom::Utility<std::string> utilityString;
-	Custom::Utility<float> utilityFloat;
-
-	std::vector<std::string> stringVector{ "w", "woudhawd", "iuug", " iuhwuiagugdwa", "a" };
+	std::vector<std::string> stringVector{ "b", "woudhawd", "iuug", "iuhwuiagugdwa", "a" };
 	std::vector<float> floatVector{ 1, 890, 2, 3987341, 98721, 2 };
 
-	auto printAllContents = [](std::vector<float> collection) -> void
-		{
-			for (int i = 0; i < collection.size(); i++)
-			{
-				std::cout << collection[i] << std::endl;
-			}
-		};
+	Custom::Utility<float>::Sort(floatVector);
+	Custom::Utility<float>::PrintContents(floatVector);
 
-	printAllContents(floatVector);
-	utilityFloat.Sort(floatVector);
-	printAllContents(floatVector);
+	Custom::Utility<std::string>::Sort(stringVector);
+	Custom::Utility<std::string>::PrintContents(stringVector);
 
 	Custom::Queue<std::string> stringQueue;
 	stringQueue.Put("First Element.");
