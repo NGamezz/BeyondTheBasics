@@ -22,10 +22,18 @@ std::ostream& operator<<(std::ostream& os, const Bankrekening& bankAccount) {
 
 	os << "Bank Saldo : " << bankAccount.ReturnBankValue() << " Euro." << std::endl;
 
+	auto transactionHistory = bankAccount.ReturnTransactionHistory();
+
 	int count = 0;
-	for (int i = 0; i < bankAccount.ReturnTransactionHistory().size(); i++)
+	for (auto& transaction : transactionHistory)
 	{
-		os << "Transaction Value = " << bankAccount.ReturnTransactionHistory()[i].ReturnTransactionValue() << ". Transaction Index = " << count << ". Transaction Date = " << bankAccount.ReturnTransactionHistory()[i].GetTheTransactionDate() << std::endl;
+		auto transactionValue = transaction.GetTheTransactionDate();
+
+		struct tm bufferResult;
+		localtime_s(&bufferResult, &transactionValue);
+
+		os << "Transaction Value = " << transaction.ReturnTransactionValue() << ". Transaction Index = "
+			<< count << ". Transaction Date = " << std::put_time(&bufferResult, "%c %Z") << std::endl;
 		count++;
 	}
 

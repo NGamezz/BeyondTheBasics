@@ -24,14 +24,14 @@ int main()
 			std::cout << "Invalid input. Please Enter Only Numbers : ";
 		}
 
-		Transactie transaction(inputValue);
+		auto transaction(inputValue);
 
 		bankAccount = bankAccount + transaction;
 
 		std::cout << bankAccount << std::endl;
 
 		std::cout << "Press BackSpace for another Transaction, Escape for exit." << std::endl;
-		bool waitinForResponse = true;
+		auto waitinForResponse = true;
 
 		while (waitinForResponse)
 		{

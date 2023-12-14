@@ -3,6 +3,8 @@
 #include "Transactie.h"
 #include <queue>
 #include <iostream>
+#include <ctime>
+#include <time.h>
 
 class Bankrekening
 {
