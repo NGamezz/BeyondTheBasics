@@ -4,6 +4,7 @@
 #include "Utility.h"
 
 Inventory<int> inventory{};
+std::vector<std::thread> threads;
 
 void AddToInventory()
 {
@@ -13,7 +14,6 @@ void AddToInventory()
 	}
 }
 
-std::vector<std::thread> threads;
 int main()
 {
 	for (int i = 0; i <= 5; i++)

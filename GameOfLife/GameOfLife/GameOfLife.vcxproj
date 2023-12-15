@@ -139,9 +139,14 @@
     <ClCompile Include="CellDieStrategy.cpp" />
     <ClCompile Include="CellReviveStrategy.cpp" />
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="CustomDieStrategy2.cpp" />
+    <ClCompile Include="CustomReviveStrategy2.cpp" />
+    <ClCompile Include="CustomDieStrategy1.cpp" />
     <ClCompile Include="GameOfLife.cpp" />
+    <ClCompile Include="GenericStrategy.cpp" />
     <ClCompile Include="IgnoreStrategy.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="CustomReviveStrategy1.cpp" />
     <ClCompile Include="Strategy.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +154,14 @@
     <ClInclude Include="CellDieStrategy.h" />
     <ClInclude Include="CellReviveStrategy.h" />
     <ClInclude Include="Context.h" />
+    <ClInclude Include="CustomDieStrategy2.h" />
+    <ClInclude Include="CustomReviveStrategy2.h" />
+    <ClInclude Include="CustomDieStrategy1.h" />
+    <ClInclude Include="GenericStrategy.h" />
     <ClInclude Include="IgnoreStrategy.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="CustomReviveStrategy1.h" />
+    <ClInclude Include="Strategies.h" />
     <ClInclude Include="Strategy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

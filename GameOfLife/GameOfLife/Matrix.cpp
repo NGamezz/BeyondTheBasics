@@ -2,38 +2,57 @@
 
 void Matrix::UpdateCells(sf::RenderWindow* window)
 {
+	auto updatesVertexArray = vertexArray;
+	auto updatesCellArray = grid;
+
 	for (int x = 0; x < width; x++)
 	{
 		for (int y = 0; y < height; y++)
 		{
-			auto& currentCell = grid[x][y];
-			int aliveNeighbours = CellNeighbours(currentCell.Position, grid);
+			auto& currentCell = updatesCellArray[x][y];
+			int aliveNeighbours = CellNeighbours(currentCell.Position, updatesCellArray);
 
-			for (int i = 0; i < strategies.size(); i++)
+			auto strategyActive = false;
+			for (auto& strategy : strategies)
 			{
-				if (strategies[i]->CheckCondition(currentCell.CheckState(), aliveNeighbours))
+				if (strategy->CheckCondition(currentCell.CheckState(), aliveNeighbours))
 				{
-					context.SetStrategy(std::move(strategies[i]));
+					context.SetStrategy(strategy);
+					strategyActive = true;
 				}
+			}
+			if (strategyActive == false)
+			{
+				context.SetStrategy(ignoreStrategy);
 			}
 
 			context.PerformStrategy(currentCell);
 
-			int index = x * height + y;
-			if (index < vertexArray.getVertexCount())
-			{
-				vertexArray[x * height + y] = currentCell.Vertex;
-			}
+			updatesVertexArray[x * height + y].color = currentCell.vertexColor;
 		}
 	}
+
+	vertexArray = updatesVertexArray;
+	grid = updatesCellArray;
+
 	window->draw(&vertexArray[0], vertexArray.getVertexCount(), sf::Points);
 }
 
 void Matrix::SetRules()
 {
-	strategies.push_back(new IgnoreStrategy());
+	//Default Rules:
 	strategies.push_back(new CellDieStrategy());
 	strategies.push_back(new CellReviveStrategy());
+
+	//Custom Rules 1: Revive when 2 exist, die when 3 or more exist, die when 1 or less exist.
+	//strategies.push_back(new CustomDieStrategy1());
+	//strategies.push_back(new CustomReviveStrategy1());
+
+	//Custom Rules 2: Revive when 4 || 6 exist, die when aliveNeighbours >= 8 || aliveNeighbours <= 3.
+	//strategies.push_back(new CustomDieStrategy2());
+	//strategies.push_back(new CustomReviveStrategy2());
+
+	ignoreStrategy = new IgnoreStrategy();
 }
 
 bool Matrix::CreateMatrix(int _width, int _height)
@@ -50,7 +69,12 @@ bool Matrix::CreateMatrix(int _width, int _height)
 		for (int j = 0; j < height; j++)
 		{
 			Cell cell(sf::Vector2f(i, j));
-			vertexArray.append(cell.Vertex);
+
+			auto vertex = sf::Vertex();
+			vertex.position = sf::Vector2f(i, j);
+			vertex.color = cell.vertexColor;
+
+			vertexArray.append(vertex);
 			row.push_back(cell);
 		}
 		grid.push_back(row);
@@ -70,6 +94,10 @@ int Matrix::CellNeighbours(sf::Vector2f position, std::vector<std::vector<Cell>>
 			int xPos = position.x + x;
 			int yPos = position.y + y;
 
+			if (y == 0 && x == 0)
+			{
+				continue;
+			}
 			if (yPos >= height || yPos < 0 || xPos >= width || xPos < 0)
 			{
 				continue;

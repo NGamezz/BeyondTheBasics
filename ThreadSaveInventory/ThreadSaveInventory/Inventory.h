@@ -26,7 +26,7 @@ inline void Inventory<T>::Put(T& object)
 template<typename T>
 inline T Inventory<T>::Get(int index)
 {
-	if (index > data.size() - 1)
+	if (index >= data.size())
 	{
 		return T();
 	}

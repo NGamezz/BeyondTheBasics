@@ -7,7 +7,7 @@ void CellDieStrategy::Execute(Cell& cell)
 
 bool CellDieStrategy::CheckCondition(bool state, int aliveNeighbours) const
 {
-	if (aliveNeighbours > 3 || aliveNeighbours < 2)
+	if ((aliveNeighbours > 3 || aliveNeighbours < 2) && state == true)
 	{
 		return true;
 	}

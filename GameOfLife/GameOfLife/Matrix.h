@@ -3,10 +3,7 @@
 #include <vector>
 #include "Cell.h"
 #include "Context.h"
-#include "Strategy.h"
-#include "CellDieStrategy.h"
-#include "IgnoreStrategy.h"
-#include "CellReviveStrategy.h"
+#include "Strategies.h"
 #include "SFML/Window.hpp"
 #include <iostream>
 #include <chrono>
@@ -27,4 +24,5 @@ private:
 	int width = 0;
 	int height = 0;
 	std::vector<Strategy*> strategies;
+	Strategy* ignoreStrategy;
 };

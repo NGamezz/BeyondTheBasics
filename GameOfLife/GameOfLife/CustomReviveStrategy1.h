@@ -1,9 +1,10 @@
 #pragma once
+
 #include "Strategy.h"
 
-class CellReviveStrategy : virtual public Strategy
+class CustomReviveStrategy1 : public Strategy
 {
 public:
-	void Execute(Cell& cell)  override;
+	void Execute(Cell& cell) override;
 	bool CheckCondition(bool state, int aliveNeighbours) const override;
 };

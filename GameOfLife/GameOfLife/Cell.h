@@ -12,7 +12,7 @@ public:
 	void SetActive(bool state);
 	bool CheckState() const;
 	sf::Vector2f Position;
-	sf::Vertex Vertex;
+	sf::Color vertexColor;
 	Cell(sf::Vector2f position);
 private:
 	bool isActive = true;

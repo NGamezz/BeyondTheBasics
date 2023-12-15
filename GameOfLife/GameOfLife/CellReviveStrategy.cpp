@@ -7,7 +7,7 @@ void CellReviveStrategy::Execute(Cell& cell)
 
 bool CellReviveStrategy::CheckCondition(bool state, int aliveNeighbours) const
 {
-	if (aliveNeighbours == 3)
+	if (aliveNeighbours == 3 && state == false)
 	{
 		return true;
 	}

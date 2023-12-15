@@ -2,13 +2,10 @@
 
 void Context::SetStrategy(Strategy* strategy)
 {
-	this->strategy = std::move(strategy);
+	this->strategy = strategy;
 }
 
 void Context::PerformStrategy(Cell& cell) const
 {
-	if (strategy)
-	{
-		strategy->Execute(cell);
-	}
+	strategy->Execute(cell);
 }

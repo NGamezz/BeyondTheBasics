@@ -1,7 +1,4 @@
 #include "Matrix.h"
-#include <Windows.h>
-
-using namespace std;
 
 int main()
 {
@@ -13,9 +10,9 @@ int main()
 	{
 		return 0;
 	};
-	cout << "Created Matrix " << endl;
+	std::cout << "Created Matrix\n";
 
-	sf::RenderWindow window(sf::VideoMode(width, height), "Game Of LIfe Window");
+	sf::RenderWindow window(sf::VideoMode(width, height), "Game Of Life Window");
 
 	while (window.isOpen())
 	{
@@ -28,9 +25,9 @@ int main()
 			}
 		}
 		window.clear(sf::Color::Black);
+
 		matrix.UpdateCells(&window);
 
 		window.display();
-		Sleep(200);
 	}
 }
